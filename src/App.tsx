@@ -1,6 +1,7 @@
 import './style.scss';
 import IMAGE from './react.png';
 import LOGO from './pngwing.svg';
+import { ClickCounter } from './ClickCounter';
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
       </h1>
       <img src={IMAGE} alt="React Logo" width={300} height={300} />
       <img src={LOGO} alt="React Logo" />
+      <ClickCounter />
     </>
   );
 };
