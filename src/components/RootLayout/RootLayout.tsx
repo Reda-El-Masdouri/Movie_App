@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import './RootLayout.scss'
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs'
 
 export default function RootLayout() {
   return (
@@ -15,6 +16,7 @@ export default function RootLayout() {
             <NavLink to="/about">About</NavLink>
           </nav>
         </header>
+        <Breadcrumbs />
         <main>
           <Outlet />
         </main>
