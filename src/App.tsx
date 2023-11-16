@@ -13,6 +13,7 @@ import RootLayout from './components/RootLayout/RootLayout'
 import About from './components/About/About'
 import { homeLoader } from './components/Home/HomeUtil'
 import MovieError from './components/MovieError/MovieError'
+import Contact, { contactAction } from './components/Contact/Contact'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
         element={<MovieDetail />}
         errorElement={<MovieError />}
       />
+      <Route path="/contact" element={<Contact />} action={contactAction} />
       <Route path="*" element={<PageNotFound />} />
     </Route>
   )
