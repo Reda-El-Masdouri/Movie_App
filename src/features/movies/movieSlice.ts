@@ -16,7 +16,7 @@ export const movieSlice = createSlice({
         state.movies = action.payload
     },
     errorMovies: (state, action) => {
-        state.movies = undefined
+        state.movies = action.payload
     }
   },
 })

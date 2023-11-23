@@ -6,7 +6,6 @@ export async function homeLoader () {
     const response = await movieApi.get(`?i=${i}&apiKey=${apiKey}&s=Harry`).catch((error: Error)=>{
         console.log("Error : ", error)
         return error;
-    })
-
+    })    
     return response;
 };
