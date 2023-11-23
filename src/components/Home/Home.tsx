@@ -7,11 +7,16 @@ import { useDispatch } from 'react-redux'
 export default function Home() {
   const movies = useLoaderData()
   const dispatch = useDispatch()
-
+  const response = []
+  if (movies?.data?.Search === undefined) response.push(movies?.data)
   useEffect(() => {
-    if (movies?.data?.Response === 'True')
-      dispatch(addMovies(movies?.data?.Search))
-    if (movies?.code === 'ERR_BAD_REQUEST') dispatch(errorMovies)
+    if (movies?.data?.Response === 'True' || movies?.statusText === 'OK')
+      dispatch(
+        addMovies(
+          movies?.data?.Search !== undefined ? movies?.data?.Search : response
+        )
+      )
+    if (movies?.code === 'ERR_BAD_REQUEST') dispatch(errorMovies(undefined))
   })
   return (
     <>
