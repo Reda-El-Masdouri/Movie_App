@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom'
 import MovieList from '../MovieList/MovieList'
 import { addMovies, errorMovies } from '../../features/movies/movieSlice'
 import { useDispatch } from 'react-redux'
+import { fetchAsyncShows } from '../../features/shows/showSlice'
 
 export default function Home() {
   const movies = useLoaderData()
@@ -18,6 +19,10 @@ export default function Home() {
       )
     if (movies?.code === 'ERR_BAD_REQUEST') dispatch(errorMovies(undefined))
   })
+  useEffect(() => {
+    dispatch(fetchAsyncShows())
+  }, [dispatch])
+
   return (
     <>
       <div className="banner-img"></div>
