@@ -16,7 +16,7 @@ export interface MovieData {
     Ratings: Rating[],
     Metascore: string,
     imdbRating: string,
-    imdbVote: string,
+    imdbVotes: string,
     imdbID: string,
     Type: string,
     DVD: string,
@@ -40,4 +40,12 @@ export interface MovieSearch {
 
 export interface MovieState {
   movies: MovieData[] | MovieSearch[] | undefined
+}
+
+export interface showSearch {
+    Title:string,
+    Year: string,
+    imdbID: string,
+    Type: string,
+    Poster: string
 }

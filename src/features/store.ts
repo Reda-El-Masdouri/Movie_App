@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import movieSlice from './movies/movieSlice'
+import showSlice from './shows/showSlice'
+import movieOrShowDetailsSlice from './movieOrShowDetailsSlice'
 
 export const store = configureStore({
   reducer: {
-    movies: movieSlice
+    movies: movieSlice,
+    shows: showSlice,
+    details: movieOrShowDetailsSlice
   },
 })
 
