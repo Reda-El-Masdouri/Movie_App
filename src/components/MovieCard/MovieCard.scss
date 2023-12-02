@@ -3,8 +3,9 @@
 .card-item {
     background-color: $secondary-color;
     cursor: pointer;
+    margin: 10px;
     transition: all 0.3s;
-    &:hover {
+       &:hover {
         transform: scale(1.1);
         transition: all 0.3s;
     }
