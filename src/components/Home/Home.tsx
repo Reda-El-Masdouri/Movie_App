@@ -9,6 +9,7 @@ export default function Home() {
   const movies = useLoaderData()
   const dispatch = useDispatch()
   const response = []
+  const showText: string = 'Friends'
   if (movies?.data?.Search === undefined) response.push(movies?.data)
   useEffect(() => {
     if (movies?.data?.Response === 'True' || movies?.statusText === 'OK')
@@ -20,7 +21,7 @@ export default function Home() {
     if (movies?.code === 'ERR_BAD_REQUEST') dispatch(errorMovies(undefined))
   })
   useEffect(() => {
-    dispatch(fetchAsyncShows())
+    dispatch(fetchAsyncShows(showText))
   }, [dispatch])
 
   return (

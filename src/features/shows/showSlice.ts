@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 import { apiKey } from '../../common/api/MovieApiKey';
 import movieApi from "../../common/api/movieApi.js";
 
@@ -8,8 +7,7 @@ const initialState = {
   shows: {},
 }
 
-export const fetchAsyncShows = createAsyncThunk('shows/fetchAsyncShows',async () => {
-    const seriesText = "harry";
+export const fetchAsyncShows = createAsyncThunk('shows/fetchAsyncShows',async (seriesText: string) => {
     const response = await movieApi.get(`?apikey=${apiKey}&type=series&s=${seriesText}`);    
     return response.data;
 });
