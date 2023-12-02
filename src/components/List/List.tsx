@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard'
 import './List.scss'
 import { ListProps } from './ListProps'
 import { MovieData, MovieSearch, showSearch } from '../../features/movies'
-
+import MyCarousel from '../MyCarousel/MyCarousel'
 export default function List({ title, data }: ListProps) {
   return data ? (
     <>
@@ -12,11 +12,7 @@ export default function List({ title, data }: ListProps) {
           <h2>{title} :</h2>
           <div className="data-container">
             {data.length > 0 ? (
-              data.map(
-                (item: MovieData | MovieSearch | showSearch, index: number) => (
-                  <MovieCard key={index} data={item} />
-                )
-              )
+              <MyCarousel data={data}></MyCarousel>
             ) : (
               <h2>Aucun Resultat</h2>
             )}
