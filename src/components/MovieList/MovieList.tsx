@@ -12,7 +12,7 @@ export default function MovieList() {
 
   return (
     <>
-      <List title="Movies" data={movies} />
+      <List title="Movies" data={movies.Search} />
       <List title="Shows" data={shows.Search} />
     </>
   )

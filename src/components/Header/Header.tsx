@@ -2,11 +2,18 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import user from '../../images/user.png'
 import './Header.scss'
+import { useDispatch } from 'react-redux'
+import { fetchAsyncShows } from '../../features/shows/showSlice'
+import { fetchAsyncMovies } from '../../features/movies/movieSlice'
 export default function Header() {
   const [text, setText] = useState('')
+  const dispatch = useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(text)
+    if (text === '') return alert('Please enter text :)')
+    dispatch(fetchAsyncMovies(text))
+    dispatch(fetchAsyncShows(text))
+    setText('')
   }
   return (
     <div className="header">

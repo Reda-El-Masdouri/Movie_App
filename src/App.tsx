@@ -11,14 +11,13 @@ import PageNotFound from './components/PageNotFound/PageNotFound'
 import './style.scss'
 import RootLayout from './components/RootLayout/RootLayout'
 import About from './components/About/About'
-import { homeLoader } from './components/Home/HomeUtil'
 import MovieError from './components/MovieError/MovieError'
 import Contact, { contactAction } from './components/Contact/Contact'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Home />} loader={homeLoader} />
+      <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route
         path="/movie/:imdbID"
